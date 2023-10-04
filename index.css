@@ -28,6 +28,11 @@ body {
   user-select: none;
 
   font-size: 50px;
+
+  border: 1px solid black;
+  border-radius: 25px;
+  padding: 25px;
+  background-color: #0000005a;
 }
 .container a:hover {
   color: #ffffff;
@@ -50,7 +55,7 @@ body {
   width: 100%;
   transform: scaleX(0);
   height: 10px;
-  bottom: 0;
+  bottom: 20px;
   left: 0;
   background-color: #ffffff;
   transform-origin: bottom right;
@@ -78,7 +83,7 @@ h3 {
 /* This is the animation for the img to rotate */
 img {
   position: absolute;
-  top: 20%;
+  top: 15%;
   left: 45%;
 
   animation: rotation 2s infinite linear;
