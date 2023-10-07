@@ -1,23 +1,32 @@
+/* Import a Google Font */
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
 
+/* Set the font-family for the entire HTML document */
 html {
   font-family: "Pixelify Sans", cursive;
 }
+
+/* Set the background color and size for the body */
 body {
   background-color: #000;
   background-size: cover;
 }
+
+/* Center the container both vertically and horizontally */
 .container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+/* Style the links within the container */
 .container a {
   color: #fbf;
   text-decoration: none, underline;
   cursor: pointer;
 
+  /* Disable text selection */
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
@@ -27,21 +36,27 @@ body {
 
   font-size: 50px;
 }
+
+/* Style the links when hovered */
 .container a:hover {
   color: #ffffff;
   text-decoration: none, underline;
 }
 
+/* Style for a container with the class "w3rcontainer" */
 .w3rcontainer {
   border: 1px solid #cccfdb;
   border-radius: 2px;
 }
+
+/* Style for elements with the class "hover-underline-animation" */
 .hover-underline-animation {
   display: inline-block;
   position: relative;
   color: #ffffff;
 }
 
+/* Style for the underline animation effect */
 .hover-underline-animation:after {
   content: "";
   position: absolute;
@@ -55,11 +70,13 @@ body {
   transition: transform 0.25s ease-out;
 }
 
+/* Style for the underline animation on hover */
 .hover-underline-animation:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
 
+/* Style for heading elements h1, h2, h3 */
 h1,
 h2,
 h3 {
@@ -68,6 +85,7 @@ h3 {
   text-decoration: underline;
   color: #fbf;
 
+  /* Disable text selection */
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
@@ -76,27 +94,57 @@ h3 {
   user-select: none;
 }
 
+/* Style for elements with the class "articel" */
 .articel {
   display: flex;
-  flex-direction: wrap;
+  flex-direction: wrap; /* Correct the property name */
 }
 
-/* This is the animation for the img to rotate */
-img {
-  position: absolute;
-  top: 15%;
-  left: 45%;
-
+/* Style for a rotating image */
+/* Add a class to your image tag */
+.responsive-img {
+  max-width: 50vh; /* Ensure the image doesn't exceed its container */
+  height: auto; /* Automatically adjust the height to maintain aspect ratio */
+  margin-top: 20px; /* Add space between text and image */
   animation: rotation 2s infinite linear;
 }
+
+/* Style for rotating elements with the class "rotate" */
 .rotate {
   animation: rotation 2s infinite linear;
 }
+
+/* Keyframes for the rotation animation */
 @keyframes rotation {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Media query for screens with a maximum width of 1024px and a maximum height of 768px */
+@media (max-width: 1024px) and (max-height: 768px) {
+  /* Add responsive styles here */
+  .container {
+    font-size: 24px; /* Adjust font size for smaller screens */
+  }
+  .hover-underline-animation:after {
+    height: 3px; /* Reduce underline height further for smaller screens */
+  }
+  h1,
+  h2,
+  h3 {
+    font-size: 24px; /* Adjust heading font size for smaller screens */
+    padding: 5px; /* Further reduce padding for headings */
+  }
+  /* Add a media query for smaller screens */
+  @media (max-width: 1024px) and (max-height: 768px) {
+    .responsive-img {
+      top: 10%; /* Adjust image position for smaller screens */
+      left: 40%; /* Adjust image position for smaller screens */
+      max-width: 30vh; /* Ensure the image doesn't exceed its container */
+    }
   }
 }
